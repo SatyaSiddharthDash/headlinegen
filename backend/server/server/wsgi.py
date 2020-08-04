@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
 from apps.ml.summarize.t5summarize import Summarizer
+from apps.ml.summarize.pipelinesummarize import SummarizerPipeline
 from apps.ml.registry import MLRegistry
 import inspect
 import os
@@ -20,10 +21,8 @@ application = get_wsgi_application()
 
 
 try:
-    registry = MLRegistry()  # create ML registry
-    # Random Forest classifier
+    registry = MLRegistry()
     rf = Summarizer()
-    # add to ML registry
     registry.add_algorithm(endpoint_name="summarize",
                            algorithm_object=rf,
                            algorithm_name="t5summarize",
@@ -32,6 +31,17 @@ try:
                            owner="Satya Siddharth Dash",
                            algorithm_description="Summarization algorithm with T5 with corresponding tokenizer",
                            algorithm_code=inspect.getsource(Summarizer))
+
+    rf2 = SummarizerPipeline()
+    registry.add_algorithm(endpoint_name="summarize",
+                           algorithm_object=rf2,
+                           algorithm_name="pipelinesummarize",
+                           algorithm_status="testing",
+                           algorithm_version="0.0.1",
+                           owner="Satya Siddharth Dash",
+                           algorithm_description="Summarization algorithm with default pipeline from huggingface/transformers",
+                           algorithm_code=inspect.getsource(SummarizerPipeline))
+
 
 except Exception as e:
     print("Exception while loading the algorithms to the registry,", str(e))
