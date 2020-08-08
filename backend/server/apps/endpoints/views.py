@@ -194,7 +194,7 @@ class StopABTestView(views.APIView):
             status_1.save()
             deactivate_other_statuses(status_1)
             # update status for second algorithm
-            status_2 = MLAlgorithmStatus(status="testing",
+            status_2 = MLAlgorithmStatus(status="production",
                                          created_by=ab_test.created_by,
                                          parent_mlalgorithm=alg_id_2,
                                          active=True)
