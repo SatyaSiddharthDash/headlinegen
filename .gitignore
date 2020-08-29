@@ -1,6 +1,5 @@
 # Dataset
-data/nytimes/*
-data/nytime_front_page.csv
+data/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
