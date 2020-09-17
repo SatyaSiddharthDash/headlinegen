@@ -1,5 +1,7 @@
 # headlinegen
-A scalable tool to perform abstractive text-summarization to generate headlines
+A scalable tool to perform abstractive text-summarization to generate headlines.
+This project was done as a part of the Springboard AI/ML track.
+The following is the project proposal as submitted to Springboard. For a few technical details click [here](https://github.com/SatyaSiddharthDash/headlinegen/techinical-details.md)
 
 ## Project Proposal
 **Motivation**: Text-summarization is one of the most important applications of Natural Language Processing. With recent advances in NLP due to the leaps and bounds in deep learning, Automatic Text Summarization has also seen great improvements. From simple keyword and n-gram summarization, followed by simple sequence-to-sequence models, all the way to deep transformers and encoder-decoder networks, text summarization has come a long way. While improvements are usually reported as achieving State-of-the-art results on metrics such as ROGUE-I and ROGUE-II, text summarization is very application-specific. Transfer learning has helped immensely in this regard. Deep pre-trained networks can now be fine-tuned to specific tasks such as summarization. Methods such as parameter-sharing and knowledge distillation have led to extremely light models that tradeoff very little accuracy for a huge improvement in computational constraints. I intend to explore the various text-summarization methods in use today and also create a scalable model myself.

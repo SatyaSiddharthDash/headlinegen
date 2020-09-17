@@ -4,6 +4,9 @@ PRODUCTION_KEY.txt
 # Dataset
 data/
 
+# Trained model
+trained_model/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

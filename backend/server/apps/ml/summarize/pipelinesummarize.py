@@ -1,11 +1,17 @@
 from transformers import pipeline
 import torch
+from transformers import T5Tokenizer, T5ForConditionalGeneration, T5Config
 
 
 class SummarizerPipeline():
 
     def __init__(self):
-        self.pipeline = pipeline(task="summarization")
+        tokenizer = T5Tokenizer.from_pretrained(
+            '../../../../trained_model/best_tfmr/')
+        model = T5ForConditionalGeneration.from_pretrained(
+            '../../../../trained_model/best_tfmr/')
+        self.pipeline = pipeline(task="summarization",
+                                 model=model, tokenizer=tokenizer)
         self.device = torch.device('cpu')
 
     def preprocess(self, input_data):
