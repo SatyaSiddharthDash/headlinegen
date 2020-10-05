@@ -26,7 +26,7 @@ try:
     registry.add_algorithm(endpoint_name="summarize",
                            algorithm_object=rf,
                            algorithm_name="t5summarize",
-                           algorithm_status="production",
+                           algorithm_status="testing",
                            algorithm_version="0.0.1",
                            owner="Satya Siddharth Dash",
                            algorithm_description="Summarization algorithm with T5 with corresponding tokenizer",
@@ -36,10 +36,10 @@ try:
     registry.add_algorithm(endpoint_name="summarize",
                            algorithm_object=rf2,
                            algorithm_name="pipelinesummarize",
-                           algorithm_status="testing",
+                           algorithm_status="production",
                            algorithm_version="0.0.1",
                            owner="Satya Siddharth Dash",
-                           algorithm_description="Summarization algorithm with default pipeline from huggingface/transformers",
+                           algorithm_description="Summarization algorithm with finetuned transformer",
                            algorithm_code=inspect.getsource(SummarizerPipeline))
 
 

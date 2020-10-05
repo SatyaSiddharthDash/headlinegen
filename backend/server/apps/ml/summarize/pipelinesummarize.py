@@ -7,9 +7,9 @@ class SummarizerPipeline():
 
     def __init__(self):
         tokenizer = T5Tokenizer.from_pretrained(
-            '../../../../trained_model/best_tfmr/')
+            '/Users/satyasiddharthdash/headlinegen/trained_model/best_tfmr/')
         model = T5ForConditionalGeneration.from_pretrained(
-            '../../../../trained_model/best_tfmr/')
+            '/Users/satyasiddharthdash/headlinegen/trained_model/best_tfmr')
         self.pipeline = pipeline(task="summarization",
                                  model=model, tokenizer=tokenizer)
         self.device = torch.device('cpu')
